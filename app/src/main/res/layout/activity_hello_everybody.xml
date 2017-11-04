@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adrian.projectcar.HelloEverybody">
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="Add to list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_part_name"
+        app:layout_constraintVertical_bias="0.306"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <EditText
+        android:id="@+id/car_part_name"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Car part name"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/car_part_price"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Estimated price"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
+        app:layout_constraintTop_toBottomOf="@+id/car_part_name"
+        app:layout_constraintVertical_bias="0.02"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <EditText
+        android:id="@+id/seller_email"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Seller's email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
+        app:layout_constraintTop_toBottomOf="@+id/car_part_price"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <Button
+        android:id="@+id/view_parts_button"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="View car parts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_button"
+        app:layout_constraintVertical_bias="0.056" />
+</android.support.constraint.ConstraintLayout>
