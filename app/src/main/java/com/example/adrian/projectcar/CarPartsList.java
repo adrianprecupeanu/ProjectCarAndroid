@@ -29,6 +29,7 @@ public class CarPartsList extends Activity {
     private DatabaseReference mDatabase;
     private ListView mUserList;
     private ArrayList<String> mParts;
+    private ArrayList<?> keys;
     private Button backButton;
     private ArrayAdapter<String> arrayAdapter;
     private FirebaseListAdapter<CarPart> myAdapter;
@@ -84,21 +85,14 @@ public class CarPartsList extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 //                DatabaseReference itemRef = myAdapter.getRef(position);
                 CarPart part = (CarPart)adapterView.getItemAtPosition(position);
-                Toast.makeText(CarPartsList.this, part.getCarPartNameField(), Toast.LENGTH_SHORT).show();
+                String reference = myAdapter.getRef(position).getKey();
+                Toast.makeText(CarPartsList.this, reference, Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                String email = part.getSellerEmailField();
-                i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_SUBJECT, part.getCarPartNameField());
-                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"to@email.com"});
-                i.putExtra(Intent.EXTRA_TEXT   , "I will offer you "+part.getEstimatedPriceField()+" lei");
+                Intent i = new Intent(CarPartsList.this, CarPartDetails.class);
 
-                i.setData(Uri.parse("mailto:"));
-                try {
-                    startActivity(Intent.createChooser(i, "Send mail..."));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(CarPartsList.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-                }
+                i.putExtra("key",reference);
+                startActivity(i);
+
             }
         });
     }

@@ -49,6 +49,7 @@ public class HelloEverybody extends AppCompatActivity {
                 CarPart carPart = new CarPart();
                 carPart.setCarPartNameField(carPartNameField);
                 carPart.setEstimatedPriceField(Integer.parseInt(estimatedPriceField));
+                carPart.setSellerEmailField(sellerEmailField);
 
                 mDatabase.child("Part").push().setValue(carPart).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
