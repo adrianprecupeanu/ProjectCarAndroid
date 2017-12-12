@@ -34,6 +34,7 @@ public class HelloEverybody extends AppCompatActivity {
 
         addButton = (Button) findViewById(R.id.add_button);
         viewPartsButton = (Button) findViewById(R.id.view_parts_button);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mCarPartNameField = (EditText) findViewById(R.id.car_part_name);
         mSellerEmailField = (EditText) findViewById(R.id.seller_email);

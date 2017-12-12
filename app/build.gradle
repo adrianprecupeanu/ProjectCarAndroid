@@ -30,12 +30,17 @@ dependencies {
     compile 'com.google.firebase:firebase-database:10.0.1'
     compile 'com.firebaseui:firebase-ui:1.2.0'
     testCompile 'junit:junit:4.12'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    compile 'com.numetriclabz.numandroidcharts:numandroidcharts:1.0.13'
+
 }
 
 allprojects {
     repositories {
         // ...
         maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://jitpack.io" }
+        maven { url 'https://dl.bintray.com/sj/maven/'}
     }
 }
 

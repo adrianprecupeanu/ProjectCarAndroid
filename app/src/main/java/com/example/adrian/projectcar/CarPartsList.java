@@ -41,6 +41,7 @@ public class CarPartsList extends Activity {
         setContentView(R.layout.car_parts);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
+//        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         mUserList = (ListView) findViewById(R.id.parts_list);
         backButton = (Button) findViewById(R.id.go_back);
         mParts = new ArrayList<String>();
